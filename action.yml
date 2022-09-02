@@ -1,0 +1,31 @@
+name: 'Artifact action'
+description: 'Upload or download an artifact of a IONOS DeployNow project'
+inputs:
+  service-host:
+    description: 'The service endpoint to call in the action'
+    required: true
+  api-key:
+    description: 'The api key to access IONOS DeployNow'
+    required: true
+  project-id:
+    description: 'The id of the IONOS DeployNow project'
+    required: true
+  branch-id:
+    description: 'The id of the branch'
+    required: true
+  folder:
+    description: 'Path to the local folder'
+    required: true
+    default: .
+  version:
+    description: 'The version of the artifact'
+    required: true
+  action:
+    description: 'The action to perform (upload or download)'
+    required: true
+  config-file:
+    description: 'The location of the deploy-now config file'
+    required: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
