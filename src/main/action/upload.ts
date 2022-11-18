@@ -1,7 +1,6 @@
 import Configuration from './input/types';
 import pLimit from 'p-limit';
 import * as path from 'path';
-import { resolve } from 'path';
 import * as fs from 'fs';
 import Axios from 'axios';
 import { ArtifactUploadInput, CompletedPart } from './api/ionos-space-api';
@@ -25,7 +24,7 @@ interface Part {
 }
 
 export async function uploadArtifact(configuration: Configuration): Promise<any> {
-  const resolvedPath = resolve(configuration.folder);
+  const resolvedPath = fs.realpathSync(configuration.folder);
   if (!fs.existsSync(resolvedPath) || !fs.lstatSync(resolvedPath).isDirectory()) {
     throw new Error(`${configuration.folder} doesn't exist`);
   }
