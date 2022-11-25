@@ -25481,7 +25481,7 @@ function uploadArtifact(configuration) {
             prefix: 'deployment/',
             filter: (filePath) => path.basename(filePath) !== 'deployment.tar',
         }, ['.']);
-        if (configuration.configFile) {
+        if (configuration.configFile && fs.existsSync(configuration.configFile)) {
             fs.copyFileSync(configuration.configFile, '.deploy-now/config.yaml');
             yield tar.u({ file: 'deployment.tar' }, ['.deploy-now/config.yaml']);
         }

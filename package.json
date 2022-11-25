@@ -1,6 +1,6 @@
 {
   "name": "artifact-action",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "lint": "eslint src --max-warnings=0 --ext .ts",
     "test": "",
