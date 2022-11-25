@@ -39,7 +39,7 @@ export async function uploadArtifact(configuration: Configuration): Promise<any>
     },
     ['.']
   );
-  if (configuration.configFile) {
+  if (configuration.configFile && fs.existsSync(configuration.configFile)) {
     fs.copyFileSync(configuration.configFile, '.deploy-now/config.yaml');
     await tar.u({ file: 'deployment.tar' }, ['.deploy-now/config.yaml']);
   }
