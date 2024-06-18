@@ -14,5 +14,5 @@ Action.run<Configuration, any>(
       folder: input.required('folder'),
       action: input.required('action'),
       configFile: input.optional('config-file'),
-    }
+    },
 );

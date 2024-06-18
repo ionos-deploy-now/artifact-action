@@ -37,7 +37,7 @@ export async function uploadArtifact(configuration: Configuration): Promise<any>
       prefix: 'deployment/',
       filter: (filePath) => path.basename(filePath) !== 'deployment.tar',
     },
-    ['.']
+    ['.'],
   );
   if (configuration.configFile && fs.existsSync(configuration.configFile)) {
     fs.copyFileSync(configuration.configFile, '.deploy-now/config.yaml');
@@ -57,7 +57,7 @@ export async function uploadArtifact(configuration: Configuration): Promise<any>
       configuration.projectId,
       configuration.branchId,
       configuration.version,
-      new ArtifactUploadInput({ size: file.length })
+      new ArtifactUploadInput({ size: file.length }),
     )
     .catch((error) => {
       throw new Error('Failed to initialize upload of deployment: ' + getErrorMessage(error));
@@ -99,8 +99,8 @@ export async function uploadArtifact(configuration: Configuration): Promise<any>
           }
         });
         return result;
-      })
-    )
+      }),
+    ),
   );
 
   const completedParts = resParts.map(
@@ -108,7 +108,7 @@ export async function uploadArtifact(configuration: Configuration): Promise<any>
       new CompletedPart({
         number: index + 1,
         eTag: (part as any).headers.etag,
-      })
+      }),
   );
 
   await client
