@@ -3,37 +3,41 @@
   "version": "1.0.2",
   "scripts": {
     "lint": "eslint src --max-warnings=0 --ext .ts",
+    "lint:fix": "eslint src --max-warnings=0 --ext .ts --fix",
     "test": "",
     "build": "tsc",
     "release": "ncc build src/main/index.ts"
   },
   "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/github": "5.1.1",
-    "@ionos-deploy-now/actions-core": "^1.0.4",
-    "async-mutex": "^0.3.2",
-    "axios": "^0.27.2",
-    "axios-retry": "^3.3.1",
-    "p-limit": "^4.0.0",
-    "p-throttle": "^5.0.0",
-    "tar": "^6.1.11"
+    "@actions/core": "^1.10.1",
+    "@actions/github": "6.0.0",
+    "@ionos-deploy-now/actions-core": "^1.1.0",
+    "async-mutex": "^0.5.0",
+    "axios": "^1.7.2",
+    "axios-retry": "^4.4.0",
+    "p-limit": "^5.0.0",
+    "p-throttle": "^6.1.0",
+    "tar": "^7.2.0"
   },
   "devDependencies": {
-    "@ionos-deploy-now/eslint-config-actions": "^1.0.0",
-    "@ionos-deploy-now/prettier-config-actions": "^1.0.0",
-    "@types/chai": "^4.3.1",
-    "@types/chai-as-promised": "^7.1.5",
-    "@types/mocha": "^9.1.1",
-    "@types/node": "18.0.6",
-    "@types/sinon": "^10.0.13",
-    "@vercel/ncc": "0.34.0",
-    "chai": "^4.3.6",
+    "@ionos-deploy-now/eslint-config-actions": "^1.1.0",
+    "@ionos-deploy-now/prettier-config-actions": "^1.1.0",
+    "@types/chai": "^4.3.16",
+    "@types/chai-as-promised": "^7.1.8",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.14.5",
+    "@types/sinon": "^17.0.3",
+    "@vercel/ncc": "0.38.1",
+    "chai": "^4.4.1",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^10.0.0",
-    "sinon": "^14.0.0",
-    "ts-node": "^10.9.1",
+    "mocha": "^10.4.0",
+    "sinon": "^18.0.0",
+    "ts-node": "^10.9.2",
     "ts-sinon": "^2.0.2",
-    "typescript": "4.7.4",
-    "uuid": "^8.3.2"
+    "typescript": "5.4.5",
+    "uuid": "^10.0.0"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
