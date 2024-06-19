@@ -15,9 +15,9 @@
     "async-mutex": "^0.5.0",
     "axios": "^1.7.2",
     "axios-retry": "^4.4.0",
-    "p-limit": "^5.0.0",
+    "p-limit": "^4.0.0",
     "p-throttle": "^6.1.0",
-    "tar": "^7.2.0"
+    "tar": "^7.4.0"
   },
   "devDependencies": {
     "@ionos-deploy-now/eslint-config-actions": "^1.1.0",
@@ -27,7 +27,7 @@
     "@types/mocha": "^10.0.6",
     "@types/node": "20.14.5",
     "@types/sinon": "^17.0.3",
-    "@vercel/ncc": "0.38.1",
+    "@vercel/ncc": "^0.38.1",
     "chai": "^4.4.1",
     "chai-as-promised": "^7.1.1",
     "mocha": "^10.4.0",
