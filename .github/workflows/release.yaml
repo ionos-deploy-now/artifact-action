@@ -43,7 +43,7 @@ jobs:
           tagging_message: v${{ inputs.version }}
       - if: inputs.update-major-tag
         name: Update major version tag
-        uses: actions/github-script@v3
+        uses: actions/github-script@v7
         env:
           VERSION: ${{ inputs.version }}
           SHA: ${{ steps.commit-step.outputs.commit_hash }}
