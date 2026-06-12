@@ -1,23 +1,23 @@
 {
   "name": "artifact-action",
-  "version": "1.1.0-beta0",
+  "version": "1.1.0-beta4",
   "scripts": {
     "lint": "eslint src --max-warnings=0 --ext .ts",
     "lint:fix": "eslint src --max-warnings=0 --ext .ts --fix",
     "test": "",
     "build": "tsc",
-    "release": "ncc build src/main/index.ts"
+    "release": "esbuild src/main/index.ts --bundle --platform=node --target=node24 --conditions=import --outfile=dist/index.js"
   },
   "dependencies": {
     "@actions/core": "^3.0.1",
     "@actions/github": "^9.1.1",
-    "@ionos-deploy-now/actions-core": "^1.1.0",
+    "@ionos-deploy-now/actions-core": "^1.2.2",
     "async-mutex": "^0.5.0",
     "axios": "^1.7.2",
     "axios-retry": "^4.4.0",
     "p-limit": "^4.0.0",
     "p-throttle": "^6.1.0",
-    "tar": "7.5.11"
+    "tar": "7.5.16"
   },
   "devDependencies": {
     "@ionos-deploy-now/eslint-config-actions": "^1.1.0",
@@ -27,7 +27,7 @@
     "@types/mocha": "^10.0.6",
     "@types/node": "^24.0.0",
     "@types/sinon": "^17.0.3",
-    "@vercel/ncc": "^0.44.0",
+    "esbuild": "^0.28.1",
     "chai": "^4.4.1",
     "chai-as-promised": "^7.1.1",
     "mocha": "^10.4.0",
